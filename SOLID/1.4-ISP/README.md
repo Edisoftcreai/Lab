@@ -1,0 +1,3 @@
+# Scenario:
+
+You are designing a user management system where different types of users require different operations. For example, a regular user might need basic operations like updating profile information, while an admin user might need additional operations like managing permissions. The goal is to ensure that each user type only implements the methods relevant to it, following the Interface Segregation Principle (ISP).
