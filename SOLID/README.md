@@ -1,4 +1,4 @@
-# Title: SOLID Principles Lab - GitHub Repository
+# Title: SOLID Principles Lab
 
 ## Description:
 Follow these steps to complete the SOLID lab:
