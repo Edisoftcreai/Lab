@@ -59,9 +59,6 @@ Welcome to the evaluation section of the CreAI labs repository! To ensure a smoo
   git push origin user/your-name
   ```
 
-
-
-
 ## Labs Overview
 
 ### Lab 1: SOLID principles
