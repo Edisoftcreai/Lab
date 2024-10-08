@@ -1,24 +1,30 @@
 from abc import ABC, abstractmethod
 
-class UserManager(ABC):
+class ProfileManager(ABC):
     @abstractmethod
     def update_profile(self, user_id: str, profile_data: dict):
         pass
 
-    @abstractmethod
-    def manage_permissions(self, user_id: str, permissions: dict):
-        pass
-
+class ReportManager(ABC):
     @abstractmethod
     def generate_report(self, user_id: str):
         pass
 
-class RegularUser(UserManager):
+class UserManager(ABC):
+    @abstractmethod
+    def manage_permissions(self, user_id: str, permissions: dict):
+        pass
+
+class RegularUser(ProfileManager):
+    def update_profile(self, user_id: str, profile_data: dict):
+        print(f"Updating profile for user {user_id} with data {profile_data}")
+
+class AdministratorUser(ProfileManager, UserManager, ReportManager):
     def update_profile(self, user_id: str, profile_data: dict):
         print(f"Updating profile for user {user_id} with data {profile_data}")
 
     def manage_permissions(self, user_id: str, permissions: dict):
-        raise NotImplementedError("RegularUser does not support managing permissions.")
-
+        print(f"Updating permissions for user {user_id} with permissions {permissions}")
+   
     def generate_report(self, user_id: str):
-        raise NotImplementedError("RegularUser does not support generating reports.")
+        print(f"Report for user {user_id}")
